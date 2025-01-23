@@ -6,9 +6,11 @@ pipeline {
             label 'TQ7000L64-582'
         }
     }
-    
+
+    triggers {
+        pollSCM '*/5 * * * *'
+    }
     stages {
-        
         stage('Building') {
             steps {
                 echo 'Building ...'
